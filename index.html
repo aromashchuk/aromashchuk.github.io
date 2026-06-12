@@ -428,7 +428,7 @@
       <input type="hidden" name="_subject" value="New QA inquiry from landing page" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://aromashchuk.github.io/?sent=1" />
+      <input type="hidden" name="_next" value="https://aromashchuk.github.io/?sent=1#contact" />
       <!-- honeypot: bots fill this, humans don't -->
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
       <div>
@@ -461,10 +461,12 @@
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // Show a confirmation after the form redirects back with ?sent=1
+  // Show a confirmation after the form redirects back with ?sent=1.
+  // The #contact anchor in the redirect URL already lands the user on the
+  // contact section, so we just reveal the message — no scrolling needed.
   if (new URLSearchParams(location.search).get('sent') === '1') {
     var m = document.getElementById('sentMsg');
-    if (m) { m.style.display = 'block'; m.scrollIntoView({behavior:'smooth', block:'center'}); }
+    if (m) { m.style.display = 'block'; }
   }
 
   // Theme toggle: flip data-theme and remember the choice.
