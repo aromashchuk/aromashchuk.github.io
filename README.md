@@ -15,11 +15,11 @@ Search the file for `{{` and `TODO` and replace:
 - [ ] **Case study numbers** — replace the placeholder metrics with a REAL project. Even one free/discounted engagement to earn the first case study is worth more than the rate.
 - [ ] About section — your years of experience, background, tech stack
 
-## Free form handling (so the contact form actually emails you)
+## Contact form (already wired up)
 
-The form posts to [Formspree](https://formspree.io) — free tier = 50 submissions/month:
-1. Sign up, create a form, copy the form ID.
-2. Replace `YOUR_FORM_ID` in `index.html`.
+The form posts to [FormSubmit](https://formsubmit.co) — free, no account. Emails go to `artromqa@gmail.com`.
+**One-time activation:** submit the form once after deploy; FormSubmit emails an activation link to that
+address — click it, and all future submissions forward to the inbox.
 
 Calendly free tier covers the "book a call" button.
 

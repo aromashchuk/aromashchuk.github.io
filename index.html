@@ -413,14 +413,24 @@
     <div class="eyebrow">Get started</div>
     <h2>Let's make your releases boring.</h2>
     <p class="lead" style="margin:0 auto">Book a free 30-minute QA audit, or send a message. I usually reply within a day.</p>
+    <div id="sentMsg" style="display:none;max-width:480px;margin:22px auto 0;padding:14px 18px;border:1px solid var(--accent);border-radius:12px;background:rgba(61,220,151,.08);color:var(--txt)">
+      ✓ Thanks — your message is on its way. I'll get back to you within a day.
+    </div>
 
     <!-- Option A: Calendly button (recommended). Replace the URL. -->
     <div class="cta-row" style="margin-top:26px">
       <a href="https://calendly.com/your-handle/qa-audit" class="btn" target="_blank" rel="noopener">Book a free QA audit →</a>
     </div>
 
-    <!-- Option B: simple contact form via Formspree (free). Replace YOUR_FORM_ID. -->
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <!-- Option B: contact form via FormSubmit (free, no account). Emails go to the address below. -->
+    <form action="https://formsubmit.co/artromqa@gmail.com" method="POST">
+      <!-- FormSubmit config -->
+      <input type="hidden" name="_subject" value="New QA inquiry from landing page" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://aromashchuk.github.io/?sent=1" />
+      <!-- honeypot: bots fill this, humans don't -->
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
       <div>
         <label for="name">Your name</label>
         <input id="name" name="name" required placeholder="Jane Founder" />
@@ -450,6 +460,12 @@
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Show a confirmation after the form redirects back with ?sent=1
+  if (new URLSearchParams(location.search).get('sent') === '1') {
+    var m = document.getElementById('sentMsg');
+    if (m) { m.style.display = 'block'; m.scrollIntoView({behavior:'smooth', block:'center'}); }
+  }
 
   // Theme toggle: flip data-theme and remember the choice.
   document.getElementById('themeToggle').addEventListener('click', function(){
