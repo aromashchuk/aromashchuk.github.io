@@ -167,10 +167,10 @@
   (function(){
     try{
       var saved = localStorage.getItem('theme');
-      var sysLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-      var theme = saved || (sysLight ? 'light' : 'dark');
+      // Default to light (matches the bright, easy brand vibe); respect a saved choice.
+      var theme = saved || 'light';
       document.documentElement.setAttribute('data-theme', theme);
-    }catch(e){ document.documentElement.setAttribute('data-theme','dark'); }
+    }catch(e){ document.documentElement.setAttribute('data-theme','light'); }
   })();
 </script>
 </head>
@@ -220,23 +220,23 @@
 <section id="pain">
   <div class="wrap">
     <div class="eyebrow">Sound familiar?</div>
-    <h2>Moving fast is great — until something breaks in prod.</h2>
-    <p class="lead">Most early-stage teams don't need a 5-person QA department. They need someone who plugs in, finds what's broken, and makes releases boring again.</p>
+    <h2>Shipping fast should feel good — not nerve-wracking.</h2>
+    <p class="lead">Most growing teams don't need a big QA department. They just need someone who quietly plugs in, keeps an eye on quality, and lets everyone ship with a calm mind.</p>
     <div class="grid3">
       <div class="card">
-        <div class="ico">🔥</div>
-        <h3>Bugs reach your users first</h3>
-        <p>Every release is a gamble. Customers report issues before your team notices, and trust erodes with each hotfix.</p>
+        <div class="ico">🚦</div>
+        <h3>Release with confidence</h3>
+        <p>Know what works before your users do — so every deploy feels like a green light, not a gamble.</p>
       </div>
       <div class="card">
-        <div class="ico">🐢</div>
-        <h3>Manual testing slows you down</h3>
-        <p>Engineers burn hours clicking through the same flows before every deploy instead of building features.</p>
+        <div class="ico">⏱️</div>
+        <h3>Give your engineers their time back</h3>
+        <p>Let automation handle the repetitive checks, so your team stays focused on building instead of clicking through the same flows.</p>
       </div>
       <div class="card">
-        <div class="ico">🌍</div>
-        <h3>Offshore QA is a black box</h3>
-        <p>12-hour delays, language gaps, and reports you can't act on. You wanted coverage, not coordination overhead.</p>
+        <div class="ico">🤝</div>
+        <h3>Work with someone close</h3>
+        <p>Same timezone, clear communication, reports you can act on right away — quality that feels like part of the team.</p>
       </div>
     </div>
   </div>
