@@ -140,6 +140,24 @@
   .metric .l{color:var(--muted);font-size:.85rem}
   blockquote{margin:18px 0 0;padding-left:18px;border-left:3px solid var(--accent);color:var(--txt);font-style:italic}
 
+  /* WINS CAROUSEL */
+  .carousel{position:relative;margin-top:24px}
+  .carousel-viewport{overflow:hidden;border-radius:var(--radius)}
+  .carousel-track{display:flex;align-items:stretch;transition:transform .45s ease}
+  .carousel-slide{min-width:100%}
+  .win{height:100%;background:linear-gradient(135deg,var(--bg-soft),var(--card));border:1px solid var(--line);
+    border-radius:var(--radius);padding:34px;box-sizing:border-box}
+  .win .wn{font-size:2.2rem;font-weight:800;color:var(--accent);line-height:1.1}
+  .win .wt{color:var(--txt);font-weight:600;margin:4px 0 14px}
+  .win p{color:var(--muted);margin:0}
+  .carousel-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:18px}
+  .car-arrow{width:40px;height:40px;border-radius:999px;border:1px solid var(--line);background:var(--bg-soft);
+    color:var(--txt);font-size:1.3rem;line-height:1;cursor:pointer;transition:.15s;display:flex;align-items:center;justify-content:center}
+  .car-arrow:hover{border-color:var(--accent);transform:translateY(-1px)}
+  .car-dots{display:flex;gap:8px}
+  .car-dot{width:9px;height:9px;border-radius:50%;border:none;background:var(--line);cursor:pointer;padding:0;transition:.15s}
+  .car-dot.active{background:var(--accent);transform:scale(1.25)}
+
   /* ABOUT */
   .about{display:grid;grid-template-columns:120px 1fr;gap:26px;align-items:start;margin-top:24px}
   @media(max-width:620px){.about{grid-template-columns:1fr}}
@@ -369,19 +387,69 @@
     <div class="eyebrow">Track record</div>
     <h2>7 years inside product teams. <span class="accent">Now solo.</span></h2>
     <p class="lead">So you work with the senior who does the work — not a handoff to a junior. Here's what that's delivered.</p>
-    <div class="case">
-      <div class="metrics">
-        <div class="metric"><div class="n">7+ yrs</div><div class="l">In QA — from manual tester to QA lead</div></div>
-        <div class="metric"><div class="n">4 platforms</div><div class="l">WEB · Windows desktop · Avalonia · connected hardware — automation built from scratch</div></div>
-        <div class="metric"><div class="n">96h → 40h</div><div class="l">Regression effort on a web product, via a custom automation suite</div></div>
-      </div>
-      <p style="color:var(--muted);margin:22px 0 0">
-        <strong style="color:var(--txt)">Recent example.</strong> On a web product, a two-person regression team was burning ~96 hours per cycle testing by hand. I built a custom automation suite that now runs 400+ real test cases in about 4 hours — work that used to take the team 2+ days — cutting their regression effort to ~40 hours, and trimming it further every week as new tests are added. (On a separate Windows desktop product, a similar framework took a full regression cycle from ~5 hours to ~2.)
-      </p>
-      <p style="color:var(--muted);margin:14px 0 0">
-        Currently Lead QA Automation Engineer at a US product company, mentoring a QA team. Past work across e-commerce, real estate and SaaS. <strong style="color:var(--txt)">References from past teams available on request.</strong>
-      </p>
+    <!-- at-a-glance stats -->
+    <div class="metrics" style="margin-bottom:8px">
+      <div class="metric"><div class="n">7+ yrs</div><div class="l">In QA — from manual tester to QA lead</div></div>
+      <div class="metric"><div class="n">5 platforms</div><div class="l">WEB · Windows desktop · Linux · Avalonia · connected hardware — automation built from scratch</div></div>
     </div>
+
+    <!-- wins carousel -->
+    <div class="carousel" id="wins">
+      <div class="carousel-viewport">
+        <div class="carousel-track">
+
+          <div class="carousel-slide">
+            <div class="win">
+              <div class="wn">96h → 40h</div>
+              <div class="wt">Web product — team regression</div>
+              <p>A two-person regression team was spending ~96 hours per cycle by hand. My custom suite now runs 400+ real test cases in about 4 hours — work that took the team 2+ days — cutting their effort to ~40h, and dropping further every week as new tests are added.</p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="win">
+              <div class="wn">15h → 4h</div>
+              <div class="wt">Real-estate web platform</div>
+              <p>A full manual regression — admin panel plus mobile and cross-browser rendering — ran ~15 hours. I automated roughly 80% of it; the full pass (automation plus targeted manual checks) now takes about 4 hours.</p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="win">
+              <div class="wn">12h → ~2h</div>
+              <div class="wt">Windows app on touchscreen hardware</div>
+              <p>A full regression on the bikes' touchscreen Windows app ran ~12 hours. 100+ autotests now fill tedious forms in 30 seconds instead of 5 minutes each and run in about an hour — full regression down to ~2–3 hours, games included.</p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="win">
+              <div class="wn">Custom tooling</div>
+              <div class="wt">When off-the-shelf tools fall short, I build my own</div>
+              <p>Built from scratch: a tool that logs in, navigates to a screen, captures it and diffs it against the Figma design; SSH access to inspect and edit files on a device; and remote VNC control to watch and test any unit from anywhere in the world.</p>
+            </div>
+          </div>
+
+          <div class="carousel-slide">
+            <div class="win">
+              <div class="wn">AI &amp; remote game testing</div>
+              <div class="wt">Record, replay &amp; an MCP that plays</div>
+              <p>I remap input to drive the on-bike games with an Xbox controller remotely, record controller sessions to replay as automated tests, and built an MCP that reads the screen and decides the next move — hands-off gameplay testing.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="car-arrow" type="button" data-dir="-1" aria-label="Previous win">‹</button>
+        <div class="car-dots"></div>
+        <button class="car-arrow" type="button" data-dir="1" aria-label="Next win">›</button>
+      </div>
+    </div>
+
+    <p style="color:var(--muted);margin:22px 0 0">
+      Currently Lead QA Automation Engineer at a US product company, mentoring a QA team. <strong style="color:var(--txt)">References from past teams available on request.</strong>
+    </p>
   </div>
 </section>
 
@@ -525,6 +593,37 @@
     document.documentElement.setAttribute('data-theme', next);
     try{ localStorage.setItem('theme', next); }catch(e){}
   });
+
+  // Wins carousel: arrows, dots, auto-advance (pause on hover).
+  (function(){
+    var car = document.getElementById('wins');
+    if (!car) return;
+    var track = car.querySelector('.carousel-track');
+    var slides = car.querySelectorAll('.carousel-slide');
+    var dotsWrap = car.querySelector('.car-dots');
+    var i = 0, timer;
+    slides.forEach(function(_, idx){
+      var b = document.createElement('button');
+      b.className = 'car-dot' + (idx === 0 ? ' active' : '');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Go to win ' + (idx + 1));
+      b.addEventListener('click', function(){ go(idx); });
+      dotsWrap.appendChild(b);
+    });
+    var dots = dotsWrap.querySelectorAll('.car-dot');
+    function render(){
+      track.style.transform = 'translateX(-' + (i * 100) + '%)';
+      dots.forEach(function(d, idx){ d.classList.toggle('active', idx === i); });
+    }
+    function go(n){ i = (n + slides.length) % slides.length; render(); restart(); }
+    car.querySelectorAll('.car-arrow').forEach(function(a){
+      a.addEventListener('click', function(){ go(i + parseInt(a.getAttribute('data-dir'), 10)); });
+    });
+    function restart(){ clearInterval(timer); timer = setInterval(function(){ go(i + 1); }, 6000); }
+    car.addEventListener('mouseenter', function(){ clearInterval(timer); });
+    car.addEventListener('mouseleave', restart);
+    render(); restart();
+  })();
 </script>
 </body>
 </html>
