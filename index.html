@@ -41,7 +41,8 @@
   }
   :root[data-theme="light"] .card{box-shadow:0 1px 3px rgba(13,22,38,.06)}
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:auto}
+  html.smooth{scroll-behavior:smooth}  /* enabled via JS after load, so the post-submit #contact jump stays instant */
   body{
     margin:0;background:var(--bg);color:var(--txt);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
@@ -506,12 +507,16 @@
   document.getElementById('yr').textContent = new Date().getFullYear();
 
   // Show a confirmation after the form redirects back with ?sent=1.
-  // The #contact anchor in the redirect URL already lands the user on the
-  // contact section, so we just reveal the message — no scrolling needed.
+  // The #contact anchor in the redirect URL lands the user on the contact
+  // section instantly (scroll-behavior is 'auto' until we enable smooth below).
   if (new URLSearchParams(location.search).get('sent') === '1') {
     var m = document.getElementById('sentMsg');
     if (m) { m.style.display = 'block'; }
   }
+
+  // Enable smooth scrolling only AFTER the initial load position is set, so the
+  // post-submit jump to #contact doesn't animate through the whole page.
+  requestAnimationFrame(function(){ document.documentElement.classList.add('smooth'); });
 
   // Theme toggle: flip data-theme and remember the choice.
   document.getElementById('themeToggle').addEventListener('click', function(){
