@@ -161,8 +161,9 @@
   /* ABOUT */
   .about{display:grid;grid-template-columns:120px 1fr;gap:26px;align-items:start;margin-top:24px}
   @media(max-width:620px){.about{grid-template-columns:1fr}}
-  .avatar{width:120px;height:120px;border-radius:20px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  .avatar{position:relative;overflow:hidden;width:120px;height:120px;border-radius:20px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
     display:flex;align-items:center;justify-content:center;font-size:2.6rem;font-weight:800;color:#06281c}
+  .avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
   /* FAQ */
   details{border:1px solid var(--line);border-radius:12px;padding:0 20px;margin-bottom:12px;background:var(--card)}
@@ -464,8 +465,8 @@
       <a class="badge" style="text-decoration:none" href="https://www.linkedin.com/in/arturromashchuk/" target="_blank" rel="noopener">View LinkedIn →</a>
     </div>
     <div class="about">
-      <!-- TODO: replace initials with a real photo: <img class="avatar" src="me.jpg" alt="..."> -->
-      <div class="avatar">GQ</div>
+      <!-- Drop a photo named me.jpg into this folder and it shows automatically; otherwise the "GQ" initials remain. -->
+      <div class="avatar">GQ<img src="me.jpg" alt="Artur — founder of Greenlight QA" onerror="this.remove()" /></div>
       <div>
         <p style="margin-top:0">
           I've spent 7+ years in software QA — from manual testing in e-commerce to building automation frameworks from scratch for SaaS, desktop, and mobile/AR products, and leading a QA team as a Lead QA Automation Engineer.
