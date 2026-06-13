@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Greenlight QA — US-Based QA & Test Automation for Startups</title>
-<meta name="description" content="US-based QA engineer helping seed & Series-A startups ship faster without breaking production. Test automation, manual QA, and QA strategy. No long contracts." />
+<title>Evergreen QA — US-Based QA & Test Automation for SaaS & E-commerce</title>
+<meta name="description" content="US-based QA engineer helping SaaS & e-commerce startups ship faster without breaking production. Test automation, AI-feature testing, hands-on QA, and QA strategy. No long contracts." />
 
 <!-- Open Graph (for nice link previews when you share it) -->
-<meta property="og:title" content="Greenlight QA — US-Based QA & Test Automation" />
+<meta property="og:title" content="Evergreen QA — US-Based QA & Test Automation" />
 <meta property="og:description" content="Ship faster without breaking prod. US-based test automation for startups. No long-term contracts." />
 <meta property="og:type" content="website" />
 
@@ -116,8 +116,9 @@
   .pkg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
   @media(max-width:820px){.pkg{grid-template-columns:1fr}}
   .pkg .card{display:flex;flex-direction:column}
-  .pkg .badge{align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--accent);border:1px solid rgba(61,220,151,.4);border-radius:999px;padding:4px 12px;margin-bottom:14px}
+  .badge{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--accent);border:1px solid rgba(61,220,151,.4);border-radius:999px;padding:4px 12px}
+  .pkg .badge{align-self:flex-start;margin-bottom:14px}
   .pkg.feature .card.hl{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
   .price{font-size:1.5rem;font-weight:800;margin:6px 0 4px}
   .price span{font-size:.9rem;color:var(--muted);font-weight:500}
@@ -179,7 +180,7 @@
 <header>
   <div class="wrap">
     <nav>
-      <div class="logo">Greenlight <span class="dot">QA</span></div>
+      <div class="logo">Evergreen <span class="dot">QA</span></div>
       <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#why">Why me</a>
@@ -200,9 +201,9 @@
     <span class="pill"><span class="blink"></span> US-based · Available now · Taking on new projects</span>
     <h1>Give every release the <span class="accent">green light</span>.</h1>
     <p class="sub">
-      I'm a US-based QA engineer who helps seed and Series-A startups catch bugs before
-      their users do — through automated test suites, hands-on QA, and a release process
-      your team can actually trust. No offshore handoffs. No long-term contracts.
+      I'm a US-based QA engineer who helps SaaS &amp; e-commerce startups catch bugs before
+      their users do — through automated test suites, AI-feature testing, hands-on QA, and a
+      release process your team can actually trust. No offshore handoffs. No long-term contracts.
     </p>
     <div class="cta-row">
       <a href="https://calendly.com/artromqa/30min" target="_blank" rel="noopener" class="btn">Book a free 30-min QA audit</a>
@@ -213,6 +214,9 @@
       <span>⚡ <b>Start in days</b>, not weeks</span>
       <span>📝 <b>No long contracts</b> · 20-hr minimum</span>
     </div>
+    <p style="color:var(--muted);font-size:.85rem;margin-top:18px">
+      Best fit: teams shipping web, mobile or desktop apps weekly — on Java, C#/.NET or JS front-ends.
+    </p>
   </div>
 </section>
 
@@ -253,7 +257,7 @@
       <div class="card">
         <span class="badge">Most popular</span>
         <h3>Test Automation</h3>
-        <div class="price">$65<span>/hr · or fixed-scope</span></div>
+        <div class="price">Project<span> or monthly retainer</span></div>
         <p style="color:var(--muted);margin:6px 0 0">Stop testing the same flows by hand.</p>
         <ul class="feat">
           <li>Custom automation frameworks built from scratch</li>
@@ -267,11 +271,11 @@
       <div class="card hl">
         <span class="badge">On-demand</span>
         <h3>Hands-on QA</h3>
-        <div class="price">$50<span>/hr · 20-hr min</span></div>
-        <p style="color:var(--muted);margin:6px 0 0">Coverage without hiring full-time.</p>
+        <div class="price">Monthly<span> or on-demand · 20-hr min</span></div>
+        <p style="color:var(--muted);margin:6px 0 0">The human-judgment layer AI can't replace.</p>
         <ul class="feat">
-          <li>Functional, regression &amp; exploratory testing</li>
-          <li>Mobile &amp; cross-browser checks</li>
+          <li>Exploratory testing tailored to your product</li>
+          <li>UX validation &amp; real-world edge cases</li>
           <li>Clear, reproducible bug reports devs can act on</li>
           <li>Release sign-off before you ship</li>
         </ul>
@@ -281,7 +285,7 @@
       <div class="card">
         <span class="badge">Strategy</span>
         <h3>QA Consulting &amp; Lead</h3>
-        <div class="price">$95<span>/hr · or retainer</span></div>
+        <div class="price">Retainer<span> or project</span></div>
         <p style="color:var(--muted);margin:6px 0 0">Build a process that scales with you.</p>
         <ul class="feat">
           <li>QA strategy &amp; test plan from scratch</li>
@@ -293,8 +297,35 @@
       </div>
 
     </div>
+
+    <!-- AI feature testing (growing demand) -->
+    <div class="case" style="margin-top:22px;border-color:var(--accent)">
+      <span class="badge">New · growing demand</span>
+      <h3 style="margin:12px 0 6px">Testing AI features</h3>
+      <p style="color:var(--muted);margin:0">
+        Shipping AI into your product? I test the parts traditional QA can't: LLM feature behavior,
+        hallucination &amp; accuracy checks, and non-deterministic outputs — so your AI features are
+        dependable in the real world, not just impressive in a demo.
+      </p>
+    </div>
+
+    <!-- First 20 hours + risk reversal -->
+    <div class="case" style="margin-top:20px">
+      <h3 style="margin:0 0 12px">What you'll have by hour 20</h3>
+      <ul class="feat" style="margin:0">
+        <li>A prioritized risk map of where your product is most likely to break</li>
+        <li>A working CI smoke suite running on every build</li>
+        <li>A release checklist your team owns and can run without me</li>
+      </ul>
+      <p style="color:var(--muted);margin:16px 0 0">
+        <strong style="color:var(--txt)">Low-risk start:</strong> if those first 20 hours don't surface
+        something worth fixing, you don't pay for them.
+      </p>
+    </div>
+
     <p style="color:var(--muted);font-size:.85rem;margin-top:18px">
-      Pricing shown as starting hourly rates. Monthly retainers and fixed-project quotes available — most clients land on a predictable monthly plan.
+      Most engagements run as a simple monthly retainer, for predictable cost and steady coverage.
+      Fixed-project quotes and hourly ($50–$95/hr) are available too — we'll pick whatever fits your stage.
     </p>
   </div>
 </section>
@@ -334,16 +365,19 @@
 <section id="work">
   <div class="wrap">
     <div class="eyebrow">Track record</div>
-    <h2>New to consulting. Not to QA.</h2>
-    <p class="lead">Seven years leading quality inside product teams — here's what that's delivered.</p>
+    <h2>7 years inside product teams. <span class="accent">Now solo.</span></h2>
+    <p class="lead">So you work with the senior who does the work — not a handoff to a junior. Here's what that's delivered.</p>
     <div class="case">
       <div class="metrics">
-        <div class="metric"><div class="n">−40%</div><div class="l">regression time, via a custom automation framework</div></div>
+        <div class="metric"><div class="n">−40%</div><div class="l">regression time on a desktop product — custom framework, built from scratch</div></div>
         <div class="metric"><div class="n">3</div><div class="l">QA automation frameworks built from scratch</div></div>
         <div class="metric"><div class="n">7+ yrs</div><div class="l">testing web, mobile, desktop &amp; AR products</div></div>
       </div>
       <p style="color:var(--muted);margin:22px 0 0">
-        Currently Lead QA Automation Engineer at a US product company — building automation from the ground up, running CI pipelines in Jenkins, and mentoring a QA team. Past work across e-commerce, real estate and SaaS. <strong style="color:var(--txt)">References from past teams available on request.</strong>
+        <strong style="color:var(--txt)">Recent example.</strong> A product team was spending days on manual regression before every release. I built a custom automation framework from scratch and wired it into Jenkins CI — cutting regression time ~40% and freeing the team to ship more often, with less risk on each release.
+      </p>
+      <p style="color:var(--muted);margin:14px 0 0">
+        Currently Lead QA Automation Engineer at a US product company, mentoring a QA team. Past work across e-commerce, real estate and SaaS. <strong style="color:var(--txt)">References from past teams available on request.</strong>
       </p>
     </div>
   </div>
@@ -353,14 +387,19 @@
 <section id="about">
   <div class="wrap">
     <div class="eyebrow">About</div>
-    <h2>Hi, I'm Artur — founder of Greenlight QA.</h2>
+    <h2>Hi, I'm Artur — founder of Evergreen QA.</h2>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:0 0 24px">
+      <span class="badge">7+ yrs experience</span>
+      <span class="badge">Lead QA Automation Engineer</span>
+      <a class="badge" style="text-decoration:none" href="https://www.linkedin.com/in/arturromashchuk/" target="_blank" rel="noopener">View LinkedIn →</a>
+    </div>
     <div class="about">
       <!-- TODO: replace initials with a real photo: <img class="avatar" src="me.jpg" alt="..."> -->
-      <div class="avatar">GQ</div>
+      <div class="avatar">EQ</div>
       <div>
         <p style="margin-top:0">
           I've spent 7+ years in software QA — from manual testing in e-commerce to building automation frameworks from scratch for SaaS, desktop, and mobile/AR products, and leading a QA team as a Lead QA Automation Engineer.
-          I started Greenlight QA because I kept seeing the same thing: great products held back by avoidable bugs and shaky release processes.
+          I started Evergreen QA because I kept seeing the same thing: great products held back by avoidable bugs and shaky release processes.
         </p>
         <p>
           I work with a handful of clients at a time so each one gets real attention. If your team is shipping fast and quality is starting to feel like a liability — that's exactly where I help most.
@@ -449,7 +488,7 @@
 
 <footer>
   <div class="wrap">
-    © <span id="yr"></span> Greenlight QA · US-based QA &amp; Test Automation ·
+    © <span id="yr"></span> Evergreen QA · US-based QA &amp; Test Automation ·
     <a class="accent" href="https://www.linkedin.com/in/arturromashchuk/" target="_blank" rel="noopener">LinkedIn</a>
   </div>
 </footer>
